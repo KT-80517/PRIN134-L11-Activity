@@ -16,5 +16,12 @@ function moveTarget() {
   target.style.top = `${randomY}px`;
 }
 
+target.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+  score++;
+  scoreBoard.textContent = `Score: ${score}`;
+  moveTarget();
+});
+
 // Initial target position
 moveTarget();
